@@ -24,6 +24,7 @@ module.exports = {
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/triple-slash-reference': 'off',
   },
   settings: {
     react: {
