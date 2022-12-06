@@ -12,7 +12,8 @@
     "prettier": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
     "format": "yarn run lint:fix && yarn run prettier",
     "storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
-    "build-storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook"
+    "build-storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook",
+    "chromatic": "npx chromatic"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -32,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@vitejs/plugin-react": "^2.2.0",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.11.4",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
@@ -44,5 +46,7 @@
     "prettier": "^2.8.0",
     "typescript": "*",
     "vite": "^3.2.3"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "bgio-typed-storybook@0.0.0"
 }
