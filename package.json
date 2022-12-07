@@ -11,9 +11,9 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
     "format": "yarn run lint:fix && yarn run prettier",
-    "storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
-    "build-storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook",
-    "chromatic": "npx chromatic"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "react": "^18.2.0",
