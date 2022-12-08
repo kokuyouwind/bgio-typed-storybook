@@ -12,6 +12,7 @@
     "lint": "eslint --ext .tsx,.ts src/",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
+    "prettier:check": "prettier --check \"**/*.+(js|json|yml|ts|tsx)\"",
     "format": "yarn run lint:fix && yarn run prettier",
     "storybook": "start-storybook -p 6006",
     "storybook:local": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
