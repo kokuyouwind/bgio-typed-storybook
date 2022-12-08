@@ -14,6 +14,7 @@
     "prettier": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
     "format": "yarn run lint:fix && yarn run prettier",
     "storybook": "start-storybook -p 6006",
+    "storybook:local": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
