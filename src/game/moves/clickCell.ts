@@ -1,9 +1,9 @@
-import {MoveContext, MoveResult} from '../types'
+import { MoveContext, MoveResult } from '../types'
 
 const clickCell = (
-    { G, playerID }: Pick<MoveContext, 'G' | 'playerID'>,
-    id: number
-) => {
+  { G, playerID }: Pick<MoveContext, 'G' | 'playerID'>,
+  id: number
+): MoveResult => {
   G.cells[id] = playerID
 }
 export default clickCell

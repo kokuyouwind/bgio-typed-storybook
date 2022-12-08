@@ -17,6 +17,6 @@ export default defineConfig({
   plugins: [react()],
   test: {
     include: ['../**/*.test.{ts,tsx}'],
-    exclude: []
-  }
+    exclude: [],
+  },
 })

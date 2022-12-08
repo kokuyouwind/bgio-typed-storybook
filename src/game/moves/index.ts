@@ -1,3 +1,3 @@
-import clickCell from "./clickCell";
+import clickCell from './clickCell'
 
 export default { clickCell }
