@@ -7,15 +7,20 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint --ext .tsx,.ts src/",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
+    "prettier:check": "prettier --check \"**/*.+(js|json|yml|ts|tsx)\"",
     "format": "yarn run lint:fix && yarn run prettier",
     "storybook": "start-storybook -p 6006",
+    "storybook:local": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
+    "boardgame.io": "^0.50.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -44,8 +49,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.8",
     "prettier": "^2.8.0",
-    "typescript": "*",
-    "vite": "^3.2.3"
+    "typescript": "^4.9",
+    "vite": "^3.2.3",
+    "vitest": "^0.25.5"
   },
   "readme": "ERROR: No README data found!",
   "_id": "bgio-typed-storybook@0.0.0"
