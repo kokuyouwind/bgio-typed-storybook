@@ -1,10 +1,17 @@
 import B from 'boardgame.io'
-import { INVALID_MOVE } from 'boardgame.io/core'
+import { BoardType } from './models/board'
 
 export interface GameState {
-  cells: Array<string | null>
+  board: BoardType
 }
+
 export type Game = B.Game<GameState>
-export type MoveContext = B.FnContext<GameState> & { playerID: B.PlayerID }
-// eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-export type MoveResult = void | GameState | typeof INVALID_MOVE
+export type MoveFn = B.MoveFn<GameState>
+export type MoveContext = Parameters<MoveFn>[0]
+export type MoveResult = ReturnType<MoveFn>
+export type Move<
+  Args extends any[] = [],
+  CtxKeys extends keyof MoveContext = 'G' | 'playerID'
+> = (ctx: Pick<MoveContext, CtxKeys>, ...args: Args) => MoveResult
+
+export type GameResult = undefined | { winner: B.PlayerID } | { draw: true }
