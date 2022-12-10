@@ -1,9 +1,10 @@
-import { MoveContext, MoveResult } from '../types'
+import { Move } from '../types'
+import { INVALID_MOVE } from 'boardgame.io/core'
 
-const clickCell = (
-  { G, playerID }: Pick<MoveContext, 'G' | 'playerID'>,
-  id: number
-): MoveResult => {
-  G.cells[id] = playerID
+const clickCell: Move<[number]> = ({ G, playerID }, id) => {
+  if (G.board[id] !== null) {
+    return INVALID_MOVE
+  }
+  G.board[id] = playerID
 }
 export default clickCell
