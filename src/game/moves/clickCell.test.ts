@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import clickCell from './clickCell'
 import Board from '../models/board'
+import { INVALID_MOVE } from 'boardgame.io/core'
 
 describe('clickCell', () => {
   it('should place the correct value in the cell', () => {
@@ -8,23 +9,24 @@ describe('clickCell', () => {
       board: Board.empty,
     }
 
-    clickCell({ G, playerID: '1' }, 3)
-
-    expect(G).toEqual({
-      board: [null, null, null, '1', null, null, null, null, null],
+    expect(clickCell({ G, playerID: '1' }, 4)).toEqual({
+      board: [
+        [null, null, null],
+        [null, '1', null],
+        [null, null, null],
+      ],
     })
   })
 
   it('place only empty cell', () => {
     const G = {
-      board: [null, null, null, '1', null, null, null, null, null],
+      board: [
+        [null, null, null],
+        ['1', null, null],
+        [null, null, null],
+      ],
     }
 
-    clickCell({ G, playerID: '2' }, 3)
-
-    // not changed
-    expect(G).toEqual({
-      board: [null, null, null, '1', null, null, null, null, null],
-    })
+    expect(clickCell({ G, playerID: '2' }, 3)).toEqual(INVALID_MOVE)
   })
 })
