@@ -1,7 +1,6 @@
-import { PlayerID } from 'boardgame.io'
+import {CellType} from "./cell";
 
-export type Cell = PlayerID | null
-export type LineType = Cell[]
+export type LineType = CellType[]
 
 const empty = (n: number): LineType => Array(n).fill(null)
 
