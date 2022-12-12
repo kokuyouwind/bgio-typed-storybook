@@ -1,35 +1,34 @@
 import { GameResult } from '../types'
 import { PlayerID } from 'boardgame.io'
+import Line, { LineType } from './line'
+import Util from '../util'
 
-export type Cell = PlayerID | null
-export type Line = Cell[]
-export type BoardType = Line[]
+export type BoardType = LineType[]
 
 const height = 3
 const width = 3
 
-const empty = [...Array(height)].map((_) => Array(width).fill(null))
+const empty = Array(height).fill(width).map(Line.empty)
 
-const lines = (board: BoardType): Line[] => {
-  const horizontalLines: Line[] = board
-  const vertialLines: Line[] = board[0].map((_, i) =>
+const lines = (board: BoardType): LineType[] => {
+  const horizontalLines: LineType[] = board
+  const vertialLines: LineType[] = Util.range(width).map((i) =>
     board.map((row) => row[i])
   )
-  const diagonalLines: Line[] = [
-    [...Array(height)].map((_, i) => board[i][i]),
-    [...Array(height)].map((_, i) => board[i][width - 1 - i]),
+  const diagonalLines: LineType[] = [
+    Util.range(height).map((i) => board[i][i]),
+    Util.range(height).map((i) => board[i][width - 1 - i]),
   ]
   return [...horizontalLines, ...vertialLines, ...diagonalLines]
 }
 
 const isVictory = (board: BoardType): boolean => {
-  return lines(board).some((line) =>
-    line.every((cell) => cell != null && cell === line[0])
-  )
+  return lines(board).some(Line.isCompleted)
 }
 const isDraw = (board: BoardType): boolean => {
-  return board.every((line) => line.every((cell) => cell !== null))
+  return board.every(Line.isFull)
 }
+
 const result = (board: BoardType, currentPlayer: PlayerID): GameResult => {
   if (isVictory(board)) {
     return { winner: currentPlayer }
