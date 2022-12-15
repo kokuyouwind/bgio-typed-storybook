@@ -1,18 +1,14 @@
 import { Move } from '../types'
 import { INVALID_MOVE } from 'boardgame.io/core'
+import Board from '../models/board'
 
-const clickCell: Move<[number]> = ({ G, playerID }, id) => {
-  const rowIdx = Math.floor(id / 3)
-  const columnIdx = id % 3
-  if (G.board[rowIdx][columnIdx] !== null) {
+const clickCell: Move<[number, number]> = ({ G, playerID }, x, y) => {
+  const board = Board.putPiece(G.board, playerID, x, y)
+  if (board === undefined) {
     return INVALID_MOVE
   }
-  return {
-    board: G.board.map((row, i) =>
-      row.map((column, j) =>
-        i === rowIdx && j === columnIdx ? playerID : column
-      )
-    ),
-  }
+
+  return { ...G, board }
 }
+
 export default clickCell

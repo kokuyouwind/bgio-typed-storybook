@@ -10,6 +10,21 @@ const width = 3
 
 const empty = Array(height).fill(width).map(Line.empty)
 
+const putPiece = (
+  board: BoardType,
+  playerID: PlayerID,
+  x: number,
+  y: number
+): BoardType | undefined => {
+  if (board[y][x] !== null) {
+    return undefined
+  }
+
+  return board.map((line, by) =>
+    line.map((column, bx) => (bx === x && by === y ? playerID : column))
+  )
+}
+
 const lines = (board: BoardType): LineType[] => {
   const horizontalLines: LineType[] = board
   const vertialLines: LineType[] = Util.range(width).map((i) =>
@@ -38,5 +53,14 @@ const result = (board: BoardType, currentPlayer: PlayerID): GameResult => {
   }
 }
 
-const Board = { height, width, empty, lines, isVictory, isDraw, result }
+const Board = {
+  height,
+  width,
+  empty,
+  putPiece,
+  lines,
+  isVictory,
+  isDraw,
+  result,
+}
 export default Board

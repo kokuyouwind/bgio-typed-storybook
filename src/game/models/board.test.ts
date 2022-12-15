@@ -11,6 +11,25 @@ describe('Board.empty', () => {
   })
 })
 
+describe('Board.putPiece', () => {
+  it('should place the correct value in the cell', () => {
+    expect(Board.putPiece(Board.empty, '1', 1, 1)).toEqual([
+      [null, null, null],
+      [null, '1', null],
+      [null, null, null],
+    ])
+  })
+
+  it('place only empty cell', () => {
+    const board = [
+      [null, null, null],
+      ['1', null, null],
+      [null, null, null],
+    ]
+
+    expect(Board.putPiece(board, '2', 0, 1)).toEqual(undefined)
+  })
+})
 describe('Board.lines', () => {
   it('should return all lines', () => {
     const board = [
