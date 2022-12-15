@@ -1,4 +1,4 @@
-import {CellType} from "./cell";
+import { CellType } from './cell'
 
 export type LineType = CellType[]
 
