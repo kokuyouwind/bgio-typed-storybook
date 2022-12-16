@@ -2,6 +2,8 @@ import { GameResult } from '../types'
 import { PlayerID } from 'boardgame.io'
 import Line, { LineType } from './line'
 import Util from '../util'
+import { Position } from './position'
+import { CellType } from './cell'
 
 export type BoardType = LineType[]
 
@@ -10,19 +12,23 @@ const width = 3
 
 const empty = Array(height).fill(width).map(Line.empty)
 
+const get = (board: BoardType, [x, y]: Position): CellType => board[y][x]
+
+const set = (board: BoardType, [x, y]: Position, v: CellType): BoardType =>
+  board.map((line, by) =>
+    line.map((column, bx) => (bx === x && by === y ? v : column))
+  )
+
 const putPiece = (
   board: BoardType,
   playerID: PlayerID,
-  x: number,
-  y: number
+  pos: Position
 ): BoardType | undefined => {
-  if (board[y][x] !== null) {
+  if (get(board, pos) !== null) {
     return undefined
   }
 
-  return board.map((line, by) =>
-    line.map((column, bx) => (bx === x && by === y ? playerID : column))
-  )
+  return set(board, pos, playerID)
 }
 
 const lines = (board: BoardType): LineType[] => {

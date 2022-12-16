@@ -9,11 +9,11 @@ describe('clickCell', () => {
       board: Board.empty,
     }
 
-    expect(clickCell({ G, playerID: '1' }, 1, 1)).toEqual({
+    expect(clickCell({ G, playerID: '1' }, [1, 2])).toEqual({
       board: [
         [null, null, null],
-        [null, '1', null],
         [null, null, null],
+        [null, '1', null],
       ],
     })
   })
@@ -27,6 +27,6 @@ describe('clickCell', () => {
       ],
     }
 
-    expect(clickCell({ G, playerID: '2' }, 0, 1)).toEqual(INVALID_MOVE)
+    expect(clickCell({ G, playerID: '2' }, [0, 1])).toEqual(INVALID_MOVE)
   })
 })
