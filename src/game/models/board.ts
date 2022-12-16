@@ -1,33 +1,55 @@
 import { GameResult } from '../types'
 import { PlayerID } from 'boardgame.io'
+import Line, { LineType } from './line'
+import Util from '../util'
+import { Position } from './position'
+import { CellType } from './cell'
 
-export type Cell = string | null
-export type BoardType = Cell[]
+export type BoardType = LineType[]
 
-const size = 9
-const empty = Array(size).fill(null)
-const isVictory = (board: BoardType): boolean => {
-  const positions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ]
+const height = 3
+const width = 3
 
-  const isRowComplete = (row: number[]): boolean => {
-    const symbols = row.map((i: number) => board[i])
-    return symbols.every((i) => i !== null && i === symbols[0])
+const empty = Array(height).fill(width).map(Line.empty)
+
+const get = (board: BoardType, [x, y]: Position): CellType => board[y][x]
+
+const set = (board: BoardType, [x, y]: Position, v: CellType): BoardType =>
+  board.map((line, by) =>
+    line.map((column, bx) => (bx === x && by === y ? v : column))
+  )
+
+const putPiece = (
+  board: BoardType,
+  playerID: PlayerID,
+  pos: Position
+): BoardType | undefined => {
+  if (get(board, pos) !== null) {
+    return undefined
   }
 
-  return positions.map(isRowComplete).some((i) => i)
+  return set(board, pos, playerID)
+}
+
+const lines = (board: BoardType): LineType[] => {
+  const horizontalLines: LineType[] = board
+  const vertialLines: LineType[] = Util.range(width).map((i) =>
+    board.map((row) => row[i])
+  )
+  const diagonalLines: LineType[] = [
+    Util.range(height).map((i) => board[i][i]),
+    Util.range(height).map((i) => board[i][width - 1 - i]),
+  ]
+  return [...horizontalLines, ...vertialLines, ...diagonalLines]
+}
+
+const isVictory = (board: BoardType): boolean => {
+  return lines(board).some(Line.isCompleted)
 }
 const isDraw = (board: BoardType): boolean => {
-  return board.filter((c) => c === null).length === 0
+  return board.every(Line.isFull)
 }
+
 const result = (board: BoardType, currentPlayer: PlayerID): GameResult => {
   if (isVictory(board)) {
     return { winner: currentPlayer }
@@ -37,5 +59,14 @@ const result = (board: BoardType, currentPlayer: PlayerID): GameResult => {
   }
 }
 
-const Board = { size, empty, isVictory, isDraw, result }
+const Board = {
+  height,
+  width,
+  empty,
+  putPiece,
+  lines,
+  isVictory,
+  isDraw,
+  result,
+}
 export default Board
