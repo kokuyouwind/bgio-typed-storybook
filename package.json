@@ -20,6 +20,10 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/joy": "^5.0.0-alpha.58",
+    "@mui/material": "^5.11.0",
     "boardgame.io": "^0.50.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
