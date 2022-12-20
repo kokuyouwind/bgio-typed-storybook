@@ -15,7 +15,10 @@ module.exports = {
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    '@typescript-eslint/triple-slash-reference': 'off'
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    '@typescript-eslint/triple-slash-reference': 'off',
   },
   settings: {
     react: {
