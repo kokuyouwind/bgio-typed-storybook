@@ -5,9 +5,10 @@ import { Cell } from './Cell'
 
 export interface LineProps {
   line: LineType
+  onClick: (i: number) => void
 }
 
-export const Line: React.FC<LineProps> = ({ line }) => (
+export const Line: React.FC<LineProps> = ({ line, onClick }) => (
   <Sheet
     sx={{
       display: 'flex',
@@ -18,7 +19,7 @@ export const Line: React.FC<LineProps> = ({ line }) => (
     }}
   >
     {line.map((cell, i) => (
-      <Cell key={i} cell={cell} />
+      <Cell key={i} cell={cell} onClick={() => onClick(i)} />
     ))}
   </Sheet>
 )
