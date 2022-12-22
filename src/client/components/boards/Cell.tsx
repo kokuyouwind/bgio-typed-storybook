@@ -5,13 +5,15 @@ import { Stone } from '../pieces/Stone'
 
 export interface CellProps {
   cell: CellType
+  onClick: () => void
 }
 
-export const Cell: React.FC<CellProps> = ({ cell }) => {
+export const Cell: React.FC<CellProps> = ({ cell, onClick }) => {
   return (
     <Button
       size="lg"
       variant="outlined"
+      onClick={() => onClick()}
       sx={{
         aspectRatio: '1 / 1',
         width: '100%',
