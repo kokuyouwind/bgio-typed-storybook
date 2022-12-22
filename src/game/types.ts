@@ -1,5 +1,5 @@
-import B from 'boardgame.io'
-import { BoardType } from './models/board'
+import type { BoardType } from './models/board'
+import type B from 'boardgame.io'
 
 export interface GameState {
   board: BoardType

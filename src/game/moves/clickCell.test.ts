@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest'
-import clickCell from './clickCell'
-import Board from '../models/board'
 import { INVALID_MOVE } from 'boardgame.io/core'
+import { describe, it, expect } from 'vitest'
+import Board from '../models/board'
+import clickCell from './clickCell'
 
 describe('clickCell', () => {
   it('should place the correct value in the cell', () => {

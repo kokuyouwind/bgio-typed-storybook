@@ -1,5 +1,5 @@
-import { Sheet } from '@mui/joy'
 import React from 'react'
+import { Sheet } from '@mui/joy'
 
 export interface StoneProps {
   color: 'black' | 'white'

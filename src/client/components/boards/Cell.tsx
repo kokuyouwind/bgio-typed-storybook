@@ -1,7 +1,7 @@
-import { Button } from '@mui/joy'
 import React from 'react'
-import { CellType } from 'game/models/cell'
+import { Button } from '@mui/joy'
 import { Stone } from '../pieces/Stone'
+import type { CellType } from 'game/models/cell'
 
 export interface CellProps {
   cell: CellType
