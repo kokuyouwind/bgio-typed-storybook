@@ -1,6 +1,6 @@
 import { Sheet } from '@mui/joy'
-import { Meta, ComponentStoryObj } from '@storybook/react'
 import { Cell } from './Cell'
+import type { Meta, ComponentStoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Cell> = { component: Cell }
 export default meta

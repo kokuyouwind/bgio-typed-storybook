@@ -1,9 +1,10 @@
-import { GameResult } from '../types'
-import { PlayerID } from 'boardgame.io'
-import Line, { LineType } from './line'
 import Util from '../util'
-import { Position } from './position'
-import { CellType } from './cell'
+import Line from './line'
+import type { GameResult } from '../types'
+import type { CellType } from './cell'
+import type { LineType } from './line'
+import type { Position } from './position'
+import type { PlayerID } from 'boardgame.io'
 
 export type BoardType = LineType[]
 

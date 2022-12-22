@@ -1,5 +1,5 @@
-import { ComponentStoryObj, Meta } from '@storybook/react'
 import { Board } from './Board'
+import type { ComponentStoryObj, Meta } from '@storybook/react'
 
 const meta: Meta<typeof Board> = { component: Board }
 export default meta

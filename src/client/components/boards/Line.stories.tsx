@@ -1,5 +1,5 @@
-import { Meta, ComponentStoryObj } from '@storybook/react'
 import { Line } from './Line'
+import type { Meta, ComponentStoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Line> = { component: Line }
 export default meta

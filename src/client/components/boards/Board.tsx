@@ -1,8 +1,8 @@
-import { Sheet } from '@mui/joy'
 import React from 'react'
-import { BoardType } from 'game/models/board'
-import { Position } from 'game/models/position'
+import { Sheet } from '@mui/joy'
 import { Line } from './Line'
+import type { BoardType } from 'game/models/board'
+import type { Position } from 'game/models/position'
 
 export interface BoardProps {
   board: BoardType

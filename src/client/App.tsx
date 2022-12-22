@@ -1,8 +1,9 @@
-import { Client, BoardProps } from 'boardgame.io/react'
-import { GameState } from 'game/types'
 import React from 'react'
+import { Client } from 'boardgame.io/react'
 import TicTacToe from '../game'
 import { Board } from './components/boards/Board'
+import type { BoardProps } from 'boardgame.io/react'
+import type { GameState } from 'game/types'
 
 type Props = BoardProps<GameState>
 const TicTacToeBoard: React.FC<Props> = ({ G, moves }) => {
