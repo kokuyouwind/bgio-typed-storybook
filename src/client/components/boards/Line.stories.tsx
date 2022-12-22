@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import { Meta, ComponentStoryObj } from '@storybook/react'
 import { Line } from './Line'
 
-const Meta: ComponentMeta<typeof Line> = { component: Line }
-export default Meta
+const meta: Meta<typeof Line> = { component: Line }
+export default meta
 
 export const Empty: ComponentStoryObj<typeof Line> = {
   args: {

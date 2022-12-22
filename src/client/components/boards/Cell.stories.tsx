@@ -1,9 +1,9 @@
 import { Sheet } from '@mui/joy'
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import { Meta, ComponentStoryObj } from '@storybook/react'
 import { Cell } from './Cell'
 
-const Meta: ComponentMeta<typeof Cell> = { component: Cell }
-export default Meta
+const meta: Meta<typeof Cell> = { component: Cell }
+export default meta
 
 export const Empty: ComponentStoryObj<typeof Cell> = {
   args: {

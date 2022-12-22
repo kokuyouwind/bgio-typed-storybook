@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import { Meta, ComponentStoryObj } from '@storybook/react'
 import { Stone } from './Stone'
 
-const Meta: ComponentMeta<typeof Stone> = { component: Stone }
-export default Meta
+const meta: Meta<typeof Stone> = { component: Stone }
+export default meta
 
 export const Black: ComponentStoryObj<typeof Stone> = {
   args: {
