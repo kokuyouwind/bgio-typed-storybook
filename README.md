@@ -1,5 +1,8 @@
 # BGIO Typed Storybook
 
+[![CI](https://github.com/kokuyouwind/bgio-typed-storybook/actions/workflows/ci.yml/badge.svg)](https://github.com/kokuyouwind/bgio-typed-storybook/actions/workflows/ci.yml)
+[![](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg)](https://main--638fd3bf1574c1214b46e940.chromatic.com/)
+
 This repository is an example of a combined TypeScript and Storybook configuration based on boardgame.io's TicTacToe tutorial.
 
 ## Usage
