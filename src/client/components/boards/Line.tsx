@@ -5,10 +5,11 @@ import type { LineType } from 'game/models/line'
 
 export interface LineProps {
   line: LineType
+  lineNumber: number
   onClick: (i: number) => void
 }
 
-export const Line: React.FC<LineProps> = ({ line, onClick }) => (
+export const Line: React.FC<LineProps> = ({ line, lineNumber, onClick }) => (
   <Sheet
     sx={{
       display: 'flex',
@@ -19,7 +20,12 @@ export const Line: React.FC<LineProps> = ({ line, onClick }) => (
     }}
   >
     {line.map((cell, i) => (
-      <Cell key={i} cell={cell} onClick={() => onClick(i)} />
+      <Cell
+        key={i}
+        cell={cell}
+        position={[i, lineNumber]}
+        onClick={() => onClick(i)}
+      />
     ))}
   </Sheet>
 )
