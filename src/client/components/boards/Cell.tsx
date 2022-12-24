@@ -20,7 +20,7 @@ export const Cell: React.FC<CellProps> = ({
       size="lg"
       variant="outlined"
       onClick={() => onClick()}
-      data-testId={`cell-${x}-${y}`}
+      data-testid={`cell-${x}-${y}`}
       sx={{
         aspectRatio: '1 / 1',
         width: '100%',
