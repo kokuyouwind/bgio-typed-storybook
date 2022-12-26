@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '@mui/joy'
 import { Stone } from '../pieces/Stone'
-import type { CellType } from 'game/models/cell'
-import type { Position } from 'game/models/position'
+import type { CellType } from 'core/models/cell'
+import type { Position } from 'core/models/position'
 
 export interface CellProps {
   cell: CellType

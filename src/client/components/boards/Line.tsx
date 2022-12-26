@@ -1,7 +1,7 @@
 import React from 'react'
 import { Sheet } from '@mui/joy'
 import { Cell } from './Cell'
-import type { LineType } from 'game/models/line'
+import type { LineType } from 'core/models/line'
 
 export interface LineProps {
   line: LineType
