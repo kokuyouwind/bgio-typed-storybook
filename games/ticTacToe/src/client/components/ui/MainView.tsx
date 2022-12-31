@@ -1,7 +1,7 @@
 import React from 'react'
 import { Board } from '../boards/Board'
 import type { BoardProps } from 'boardgame.io/react'
-import type { GameState } from 'game/types'
+import type { GameState } from 'core/types'
 
 export type MainViewProps = BoardProps<GameState>
 
