@@ -41,7 +41,7 @@
     "@storybook/test-runner": "^0.9.2",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
+    "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@vitejs/plugin-react": "^3.0.0",
     "babel-loader": "^9.1.0",
