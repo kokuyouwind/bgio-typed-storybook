@@ -3,5 +3,10 @@
   "workspaces": [
     "server",
     "games/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:server": "yarn workspace @bgio-typed-storybook/server dev",
+    "dev:lobby": "yarn workspace @bgio-typed-storybook/tic-tac-toe dev"
+  }
 }
