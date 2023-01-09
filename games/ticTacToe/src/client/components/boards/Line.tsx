@@ -24,7 +24,9 @@ export const Line: React.FC<LineProps> = ({ line, lineNumber, onClick }) => (
         key={i}
         cell={cell}
         position={[i, lineNumber]}
-        onClick={() => onClick(i)}
+        onClick={() => {
+          onClick(i)
+        }}
       />
     ))}
   </Sheet>

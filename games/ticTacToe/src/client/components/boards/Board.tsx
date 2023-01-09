@@ -26,7 +26,9 @@ export const Board: React.FC<BoardProps> = ({ board, onClick }) => (
         key={y}
         line={line}
         lineNumber={y}
-        onClick={(x) => onClick([x, y])}
+        onClick={(x) => {
+          onClick([x, y])
+        }}
       />
     ))}
   </Sheet>
