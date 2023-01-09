@@ -60,7 +60,5 @@
     "vite": "^4.0.3",
     "vite-plugin-turbosnap": "^1.0.1",
     "vitest": "^0.25.7"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "bgio-typed-storybook@0.0.0"
+  }
 }
