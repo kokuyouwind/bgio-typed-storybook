@@ -3,6 +3,7 @@ import moves from './moves'
 import type { Game } from './types'
 
 const TicTacToe: Game = {
+  name: 'tic-tac-toe',
   setup: () => ({ board: Board.empty }),
   turn: {
     minMoves: 1,
