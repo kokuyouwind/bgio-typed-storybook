@@ -6,4 +6,5 @@ const server = Server({
   origins: [Origins.LOCALHOST],
 })
 
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 server.run(8000)

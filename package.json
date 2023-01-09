@@ -7,6 +7,9 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:server": "yarn workspace @bgio-typed-storybook/server dev",
-    "dev:lobby": "yarn workspace @bgio-typed-storybook/tic-tac-toe dev"
+    "dev:lobby": "yarn workspace @bgio-typed-storybook/tic-tac-toe dev",
+    "format": "run-s format:*",
+    "format:server": "yarn workspace @bgio-typed-storybook/server format",
+    "format:lobby": "yarn workspace @bgio-typed-storybook/tic-tac-toe format"
   }
 }
