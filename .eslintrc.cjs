@@ -19,6 +19,7 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     '@typescript-eslint/triple-slash-reference': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off',
     'import/order': [
       'error',
       {
