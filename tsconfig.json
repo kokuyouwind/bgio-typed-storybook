@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    { "path": "games/ticTacToe" },
+    { "path": "lobby" },
+  ]
+}
