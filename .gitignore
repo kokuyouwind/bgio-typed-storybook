@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 storybook-static/
+
+# tsc build
+tsconfig.node.tsbuildinfo
+vite.config.d.ts
+vite.config.js
+g

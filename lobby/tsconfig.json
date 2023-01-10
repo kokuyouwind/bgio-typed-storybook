@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "outDir": "../../dist/games/ticTacToe",
+    "outDir": "../dist/lobby",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -15,10 +15,17 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmit": true,
     "jsx": "react-jsx",
     "rootDir": "./src",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "paths": {
+      "ticTacToe/*": ["../../games/ticTacToe/src/*"]
+    }
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "../games/ticTacToe" }
+  ]
 }

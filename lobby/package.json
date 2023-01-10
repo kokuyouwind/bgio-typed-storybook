@@ -1,11 +1,11 @@
 {
-  "name": "@bgio-typed-storybook/tic-tac-toe",
+  "name": "@bgio-typed-storybook/lobby",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",

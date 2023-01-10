@@ -2,14 +2,16 @@
   "private": true,
   "workspaces": [
     "server",
+    "lobby",
     "games/*"
   ],
   "scripts": {
     "dev": "run-p dev:*",
     "dev:server": "yarn workspace @bgio-typed-storybook/server dev",
-    "dev:lobby": "yarn workspace @bgio-typed-storybook/tic-tac-toe dev",
+    "dev:lobby": "yarn workspace @bgio-typed-storybook/lobby dev",
     "format": "run-s format:*",
     "format:server": "yarn workspace @bgio-typed-storybook/server format",
-    "format:lobby": "yarn workspace @bgio-typed-storybook/tic-tac-toe format"
+    "format:lobby": "yarn workspace @bgio-typed-storybook/lobby format",
+    "format:tictactoe": "yarn workspace @bgio-typed-storybook/tic-tac-toe format"
   }
 }
