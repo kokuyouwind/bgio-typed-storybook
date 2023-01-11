@@ -17,5 +17,15 @@ export const Start: ComponentStoryObj<typeof MainView> = {
     moves: {
       clickCell: action('clickCell'),
     },
+    ctx: {
+      currentPlayer: '0',
+      gameover: undefined,
+      numPlayers: 2,
+      playOrder: ['0', '1'],
+      playOrderPos: 0,
+      activePlayers: null,
+      turn: 1,
+      phase: '',
+    },
   },
 }
