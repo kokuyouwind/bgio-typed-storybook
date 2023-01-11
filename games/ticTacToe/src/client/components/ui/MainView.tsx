@@ -6,10 +6,14 @@ import type { GameState } from 'core/types'
 
 export type MainViewProps = BoardProps<GameState>
 
-const MainView: React.FC<MainViewProps> = ({ G, moves, ctx }) => {
+const MainView: React.FC<MainViewProps> = ({ G, moves, ctx, matchData }) => {
   return (
     <>
-      <SystemMessage currentPlayer={ctx.currentPlayer} result={ctx.gameover} />
+      <SystemMessage
+        currentPlayer={ctx.currentPlayer}
+        matchData={matchData}
+        result={ctx.gameover}
+      />
       <Board board={G.board} onClick={moves.clickCell} />
     </>
   )
