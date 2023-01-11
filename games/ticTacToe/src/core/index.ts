@@ -4,6 +4,8 @@ import type { Game } from './types'
 
 const TicTacToe: Game = {
   name: 'tic-tac-toe',
+  minPlayers: 2,
+  maxPlayers: 2,
   setup: () => ({ board: Board.empty }),
   turn: {
     minMoves: 1,
