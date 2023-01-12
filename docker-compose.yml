@@ -1,0 +1,9 @@
+version: '2'
+services:
+  lobby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: lobby
+    ports:
+      - "1080:80"
