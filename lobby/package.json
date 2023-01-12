@@ -47,7 +47,7 @@
     "babel-loader": "^9.1.0",
     "chromatic": "^6.14.0",
     "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^26.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
