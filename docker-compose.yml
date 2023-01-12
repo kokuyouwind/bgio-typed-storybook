@@ -5,5 +5,16 @@ services:
       context: .
       dockerfile: Dockerfile
       target: lobby
+      args:
+        VITE_SERVER_URL: "http://localhost:8000"
     ports:
-      - "1080:80"
+      - "3000:80"
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+      args:
+        ORIGIN_URL: "localhost:3000"
+    ports:
+      - "8000:8000"
