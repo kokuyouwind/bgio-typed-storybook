@@ -6,8 +6,8 @@ import TicTacToe from 'ticTacToe/core'
 const Client: React.FC = () => {
   return (
     <Lobby
-      gameServer={`http://${window.location.hostname}:8000`}
-      lobbyServer={`http://${window.location.hostname}:8000`}
+      gameServer={import.meta.env.VITE_SERVER_URL}
+      lobbyServer={import.meta.env.VITE_SERVER_URL}
       gameComponents={[{ game: TicTacToe, board: MainView }]}
     />
   )
