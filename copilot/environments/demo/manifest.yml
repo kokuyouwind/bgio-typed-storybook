@@ -3,3 +3,8 @@ type: Environment
 
 observability:
   container_insights: false
+
+http:
+  public:
+    certificates:
+      - arn:aws:acm:ap-northeast-1:628332231450:certificate/78c21389-d26f-460b-86a5-1c00bb70cb72

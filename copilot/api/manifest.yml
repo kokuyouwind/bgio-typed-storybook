@@ -1,0 +1,30 @@
+name: api
+type: Load Balanced Web Service
+
+http:
+  path: '/'
+  healthcheck: '/games'
+
+image:
+  build:
+    dockerfile: Dockerfile
+    context: .
+    target: server
+    args:
+      ORIGIN_URL: "demo.boardgame-park.com"
+  port: 8000
+
+cpu: 256
+memory: 512
+platform: linux/arm64
+count: 1
+exec: true
+network:
+  connect: true
+
+environments:
+  demo:
+    http:
+      alias:
+        - name: 'api.demo.boardgame-park.com'
+          hosted_zone: Z04608001FQ9I4AZVFW08
