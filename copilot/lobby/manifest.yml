@@ -1,0 +1,32 @@
+name: lobby
+type: Load Balanced Web Service
+
+http:
+  path: '/'
+  healthcheck: '/'
+
+image:
+  build:
+    dockerfile: Dockerfile
+    context: .
+    target: lobby
+  port: 80
+
+cpu: 256
+memory: 512
+platform: linux/arm64
+count: 1
+exec: true
+network:
+  connect: true
+
+environments:
+  demo:
+    image:
+      build:
+        args:
+          VITE_SERVER_URL: "https://api.demo.boardgame-park.com"
+    http:
+      alias:
+        - name: 'demo.boardgame-park.com'
+          hosted_zone: Z04608001FQ9I4AZVFW08
