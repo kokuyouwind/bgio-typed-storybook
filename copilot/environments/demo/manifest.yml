@@ -7,4 +7,5 @@ observability:
 http:
   public:
     certificates:
+      - arn:aws:acm:ap-northeast-1:628332231450:certificate/ff541014-21af-40eb-902a-8db64b680cd4
       - arn:aws:acm:ap-northeast-1:628332231450:certificate/78c21389-d26f-460b-86a5-1c00bb70cb72

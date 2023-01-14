@@ -1,16 +1,16 @@
-name: api
+name: lobby
 type: Load Balanced Web Service
 
 http:
   path: '/'
-  healthcheck: '/games'
+  healthcheck: '/'
 
 image:
   build:
     dockerfile: Dockerfile
     context: .
-    target: server
-  port: 8000
+    target: lobby
+  port: 80
 
 cpu: 256
 memory: 512
@@ -25,10 +25,8 @@ environments:
     image:
       build:
         args:
-          ORIGIN_URL: "https://demo.boardgame-park.com"
-    variables:
-      ORIGIN_URL: "https://demo.boardgame-park.com"
+          VITE_SERVER_URL: "https://api.demo.boardgame-park.com"
     http:
       alias:
-        - name: 'api.demo.boardgame-park.com'
+        - name: 'demo.boardgame-park.com'
           hosted_zone: Z04608001FQ9I4AZVFW08
