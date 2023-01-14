@@ -1,0 +1,5 @@
+name: demo
+type: Environment
+
+observability:
+  container_insights: false
