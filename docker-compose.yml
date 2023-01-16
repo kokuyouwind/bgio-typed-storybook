@@ -18,3 +18,10 @@ services:
         ORIGIN_URL: "localhost:3000"
     ports:
       - "8000:8000"
+  tictactoe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: tictactoe
+    ports:
+      - "3001:80"
