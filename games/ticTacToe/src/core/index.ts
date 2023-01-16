@@ -13,5 +13,16 @@ const TicTacToe: Game = {
   },
   endIf: ({ G, ctx }) => Board.result(G.board, ctx.currentPlayer),
   moves,
+  ai: {
+    enumerate: (G, _ctx) => {
+      const m = G.board.flatMap((line, y) =>
+        line.flatMap((cell, x) =>
+          cell === null ? [{ move: 'clickCell', args: [[x, y]] }] : []
+        )
+      )
+      console.log(m)
+      return m
+    },
+  },
 }
 export default TicTacToe
