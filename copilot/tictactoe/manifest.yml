@@ -1,0 +1,28 @@
+name: tictactoe
+type: Load Balanced Web Service
+
+http:
+  path: '/'
+  healthcheck: '/'
+
+image:
+  build:
+    dockerfile: Dockerfile
+    context: .
+    target: tictactoe
+  port: 80
+
+cpu: 256
+memory: 512
+platform: linux/arm64
+count: 1
+exec: true
+network:
+  connect: true
+
+environments:
+  demo:
+    http:
+      alias:
+        - name: 'tictactoe.demo.boardgame-park.com'
+          hosted_zone: Z04608001FQ9I4AZVFW08
