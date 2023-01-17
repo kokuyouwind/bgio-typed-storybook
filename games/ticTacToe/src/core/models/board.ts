@@ -1,9 +1,9 @@
 import Util from '../util'
 import Line from './line'
-import type { GameResult } from '../types'
 import type { CellType } from './cell'
 import type { LineType } from './line'
 import type { Position } from './position'
+import type { GameResult } from '../types'
 import type { PlayerID } from 'boardgame.io'
 
 export type BoardType = LineType[]
