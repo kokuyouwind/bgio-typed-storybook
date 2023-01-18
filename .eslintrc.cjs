@@ -20,6 +20,7 @@ module.exports = {
     "react/prop-types": "off",
     '@typescript-eslint/triple-slash-reference': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
+    '@typescript-eslint/await-thenable': 'off',
     'import/order': [
       'error',
       {
