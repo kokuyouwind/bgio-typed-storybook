@@ -28,7 +28,7 @@ const createMessage = ({
   currentPlayer,
   matchData,
   result,
-}: SystemMessageProps): String => {
+}: SystemMessageProps): string => {
   if (result !== undefined) {
     return 'draw' in result
       ? 'ゲーム終了: 引き分け'
