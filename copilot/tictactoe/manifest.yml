@@ -7,9 +7,8 @@ http:
 
 image:
   build:
-    dockerfile: Dockerfile
+    dockerfile: docker/tictactoe/Dockerfile
     context: .
-    target: tictactoe
   port: 80
 
 cpu: 256

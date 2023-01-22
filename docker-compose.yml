@@ -3,8 +3,7 @@ services:
   lobby:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: lobby
+      dockerfile: docker/lobby/Dockerfile
       args:
         VITE_SERVER_URL: "http://localhost:8000"
     ports:
@@ -12,8 +11,7 @@ services:
   server:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: server
+      dockerfile: docker/server/Dockerfile
       args:
         ORIGIN_URL: "localhost:3000"
     ports:
@@ -21,7 +19,6 @@ services:
   tictactoe:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: tictactoe
+      dockerfile: docker/tictactoe/Dockerfile
     ports:
       - "3001:80"
