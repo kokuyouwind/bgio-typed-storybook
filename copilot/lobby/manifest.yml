@@ -7,9 +7,8 @@ http:
 
 image:
   build:
-    dockerfile: Dockerfile
+    dockerfile: docker/lobby/Dockerfile
     context: .
-    target: lobby
   port: 80
 
 cpu: 256

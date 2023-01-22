@@ -7,9 +7,8 @@ http:
 
 image:
   build:
-    dockerfile: Dockerfile
+    dockerfile: docker/server/Dockerfile
     context: .
-    target: server
   port: 8000
 
 cpu: 256

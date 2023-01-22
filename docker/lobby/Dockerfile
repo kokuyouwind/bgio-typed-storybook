@@ -22,24 +22,3 @@ WORKDIR /usr/share/nginx/html/
 
 COPY --from=lobby-base /app/lobby/dist/lobby/index.html ./
 COPY --from=lobby-base /app/lobby/dist/lobby/assets ./assets
-
-
-FROM base as server
-ARG ORIGIN_URL
-
-COPY server ./server
-RUN yarn workspace @bgio-typed-storybook/server build
-CMD ["yarn", "workspace", "@bgio-typed-storybook/server", "serve"]
-
-
-FROM base as tictactoe-base
-ENV NODE_ENV develop
-
-RUN yarn workspace @bgio-typed-storybook/tic-tac-toe build
-
-
-FROM public.ecr.aws/nginx/nginx:1.18-alpine as tictactoe
-WORKDIR /usr/share/nginx/html/
-
-COPY --from=tictactoe-base /app/games/ticTacToe/dist/client/index.html ./
-COPY --from=tictactoe-base /app/games/ticTacToe/dist/client/assets ./assets
