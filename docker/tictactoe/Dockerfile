@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:19.6.0-alpine as base
+FROM public.ecr.aws/docker/library/node:19.2.0-alpine as base
 WORKDIR /app
 
 COPY package.json yarn.lock ./
@@ -16,7 +16,7 @@ ENV NODE_ENV develop
 RUN yarn workspace @bgio-typed-storybook/tic-tac-toe build
 
 
-FROM public.ecr.aws/nginx/nginx:1.23-alpine as tictactoe
+FROM public.ecr.aws/nginx/nginx:1.18-alpine as tictactoe
 WORKDIR /usr/share/nginx/html/
 
 COPY --from=tictactoe-base /app/games/ticTacToe/dist/client/index.html ./
