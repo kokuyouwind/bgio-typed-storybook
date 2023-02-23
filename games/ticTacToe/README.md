@@ -12,8 +12,6 @@ $ yarn dev
 
 # Start Storybook
 $ yarn storybook
-# If error:0308010C occures, use this.
-$ yarn storybook:local
 
 # Format Codes(lint & prettier)
 $ yarn format
