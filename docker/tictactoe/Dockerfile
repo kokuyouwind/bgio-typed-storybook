@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:19.6.0-alpine as base
+FROM public.ecr.aws/docker/library/node:20.8.1-alpine as base
 WORKDIR /app
 
 COPY package.json yarn.lock ./
