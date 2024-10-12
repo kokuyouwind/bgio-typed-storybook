@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:19.6.0-alpine as base
+FROM public.ecr.aws/docker/library/node:19.9.0-alpine as base
 WORKDIR /app
 
 COPY package.json yarn.lock ./
@@ -17,7 +17,7 @@ COPY lobby ./lobby
 RUN yarn workspace @bgio-typed-storybook/lobby build
 
 
-FROM public.ecr.aws/nginx/nginx:1.23-alpine as lobby
+FROM public.ecr.aws/nginx/nginx:1.27-alpine as lobby
 WORKDIR /usr/share/nginx/html/
 
 COPY --from=lobby-base /app/lobby/dist/lobby/index.html ./
